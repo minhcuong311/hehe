@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng sinh nhật mẹ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff9a76, #e63946);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 10vh;
+            animation: fadeIn 3s ease-in-out, glow 2s infinite alternate;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 1em;
+            line-height: 1.8;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .extra-message {
+            font-size: 1.2em;
+            margin-top: 2em;
+            animation: fadeIn 5s ease-in-out, floatText 5s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff6f61, 0 0 15px #ff6f61; }
+            100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff6f61, 0 0 30px #ff6f61; }
+        }
+
+        @keyframes floatText {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* Hiệu ứng pháo hoa */
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+            border-radius: 50%;
+            animation: firework 2s ease-in-out infinite;
+        }
+
+        @keyframes firework {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* Hiệu ứng trái tim bay */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0% 35%);
+            animation: flyHearts 5s ease-in-out infinite;
+        }
+
+        @keyframes flyHearts {
+            0% {
+                transform: translate(0, 0) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(50vw - 10px), calc(-100vh)) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Chúc Mừng Sinh Nhật Mẹ Yêu! 🎉</h1>
+    <p>
+        Mẹ ơi, hôm nay là ngày đặc biệt của mẹ, con muốn gửi đến mẹ tất cả tình yêu thương và lòng biết ơn sâu sắc nhất.  
+        Cảm ơn mẹ vì đã luôn yêu thương, chăm sóc và hy sinh tất cả để con có được ngày hôm nay.  
+    </p>
+    <p>
+        Chúc mẹ luôn khỏe mạnh, hạnh phúc và luôn nở nụ cười trên môi. Con mong rằng mọi điều tốt đẹp nhất trên thế gian này sẽ đến với mẹ.  
+        Mẹ mãi là người tuyệt vời nhất trong trái tim con.  
+    </p>
+    <p class="extra-message">  
+        Con iu mẹ hihihihihihihihihihihi! ❤️  
+    </p>
+    <p class="extra-message">
+        MUA CHO CON CÁI BÀN PHÍM NHA AHIHIHIHIHIHI
+    </p>
+
+    <script>
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = Math.random() * 100 + 'vw';
+            firework.style.top = Math.random() * 100 + 'vh';
+            firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            document.body.appendChild(firework);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 2000);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.bottom = '-50px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createFirework, 200);
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
